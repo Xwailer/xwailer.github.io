@@ -63,21 +63,18 @@ export default function Home() {
                 borderBottom: '1px solid var(--border-glass)',
                 marginBottom: '28px'
               }}>
-                <div style={{
-                  width: '44px',
-                  height: '44px',
-                  borderRadius: '50%',
-                  background: '#131e33',
-                  border: '2px solid var(--primary-teal)',
-                  display: 'flex',
-                  alignItems: 'center',
-                  justifyContent: 'center',
-                  fontFamily: 'var(--font-heading)',
-                  fontWeight: 800,
-                  color: 'var(--primary-teal)'
-                }}>
-                  HV
-                </div>
+                <img
+                  src="author_harrison.jpg"
+                  alt="Dr. Harrison Vance, Ph.D."
+                  style={{
+                    width: '48px',
+                    height: '48px',
+                    borderRadius: '50%',
+                    objectFit: 'cover',
+                    border: '2px solid var(--primary-teal)',
+                    boxShadow: '0 0 12px rgba(16, 185, 129, 0.35)'
+                  }}
+                />
                 <div style={{ display: 'flex', flexDirection: 'column' }}>
                   <div style={{ fontSize: '0.95rem', fontWeight: 700, color: 'var(--text-white)', display: 'flex', alignItems: 'center', gap: '6px' }}>
                     <span>Dr. Harrison Vance, Ph.D.</span>
