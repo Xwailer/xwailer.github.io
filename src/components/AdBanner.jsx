@@ -48,6 +48,7 @@ export default function AdBanner({ type = 'leaderboard', customStyle = {} }) {
               }}
               title="A-ADS Leaderboard 2453326"
             />
+            <a style={{ display: 'none' }} id="frame-link" href="https://a-ads.com/?partner=2453326">A-ADS</a>
           </div>
         </div>
       </div>
@@ -103,6 +104,7 @@ export default function AdBanner({ type = 'leaderboard', customStyle = {} }) {
             }}
             title="A-ADS Sidebar 2453328"
           />
+          <a style={{ display: 'none' }} id="frame-link" href="https://a-ads.com/?partner=2453328">A-ADS</a>
         </div>
       </div>
     );
@@ -146,6 +148,7 @@ export default function AdBanner({ type = 'leaderboard', customStyle = {} }) {
             }}
             title="A-ADS Native 2453328"
           />
+          <a style={{ display: 'none' }} id="frame-link" href="https://a-ads.com/?partner=2453328">A-ADS</a>
         </div>
       </div>
     );
@@ -207,6 +210,7 @@ export default function AdBanner({ type = 'leaderboard', customStyle = {} }) {
             }}
             title="A-ADS Sticky Bottom 2453325"
           />
+          <a style={{ display: 'none' }} id="frame-link" href="https://a-ads.com/?partner=2453325">A-ADS</a>
         </div>
       </div>
     );

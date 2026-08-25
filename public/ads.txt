@@ -1,3 +1,8 @@
+# A-ADS Network Verification & Authorization
+a-ads.com, 2453325, DIRECT
+a-ads.com, 2453326, DIRECT
+a-ads.com, 2453328, DIRECT
+
 nsightvideo.com,133652334,DIRECT,fd25240165056a01
 nsightvideo.com,133652334,DIRECT,fd25240165056a01
 managerdomain=nsightvideo.com
