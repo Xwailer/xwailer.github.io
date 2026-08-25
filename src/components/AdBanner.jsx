@@ -6,6 +6,7 @@ export default function AdBanner({ type = 'leaderboard', customStyle = {} }) {
 
   if (dismissed) return null;
 
+  // 1. Top Leaderboard Banner (2453326)
   if (type === 'leaderboard') {
     return (
       <div style={{
@@ -31,10 +32,10 @@ export default function AdBanner({ type = 'leaderboard', customStyle = {} }) {
           }}>
             Advertisement / Verified Sponsor Directory
           </div>
-          <div style={{ minHeight: '90px', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+          <div id="frame" style={{ width: '100%', margin: 'auto', position: 'relative', zIndex: 99998 }}>
             <iframe
-              data-aa="2453243"
-              src="//acceptable.a-ads.com/2453243/?size=Adaptive&background_color=0d121f"
+              data-aa="2453326"
+              src="//acceptable.a-ads.com/2453326/?size=Adaptive"
               style={{
                 border: 0,
                 padding: 0,
@@ -42,9 +43,10 @@ export default function AdBanner({ type = 'leaderboard', customStyle = {} }) {
                 maxWidth: '728px',
                 height: '90px',
                 overflow: 'hidden',
+                display: 'block',
                 margin: 'auto'
               }}
-              title="A-ADS Leaderboard Banner"
+              title="A-ADS Leaderboard 2453326"
             />
           </div>
         </div>
@@ -52,6 +54,7 @@ export default function AdBanner({ type = 'leaderboard', customStyle = {} }) {
     );
   }
 
+  // 2. Sidebar Sticky Banner (2453328)
   if (type === 'sidebar-sticky') {
     return (
       <div style={{
@@ -72,35 +75,40 @@ export default function AdBanner({ type = 'leaderboard', customStyle = {} }) {
           fontFamily: 'var(--font-mono)',
           marginBottom: '10px'
         }}>
-          Sponsored High-Impact (300x250)
+          Sponsored High-Impact Placement
         </div>
-        <div style={{
+        <div id="frame" style={{
           minHeight: '250px',
           display: 'flex',
           alignItems: 'center',
           justifyContent: 'center',
           background: 'var(--bg-page)',
           borderRadius: 'var(--radius-sm)',
-          border: '1px dashed var(--border-glass)'
+          border: '1px dashed var(--border-glass)',
+          position: 'relative',
+          zIndex: 99998
         }}>
           <iframe
-            data-aa="2453243"
-            src="//acceptable.a-ads.com/2453243/?size=300x250&background_color=0b0f19"
+            data-aa="2453328"
+            src="//acceptable.a-ads.com/2453328/?size=Adaptive"
             style={{
               border: 0,
               padding: 0,
-              width: '300px',
+              width: '100%',
+              maxWidth: '300px',
               height: '250px',
               overflow: 'hidden',
+              display: 'block',
               margin: 'auto'
             }}
-            title="A-ADS Sidebar Half-Page"
+            title="A-ADS Sidebar 2453328"
           />
         </div>
       </div>
     );
   }
 
+  // 3. In-Article Native Banner (2453328)
   if (type === 'in-article') {
     return (
       <div style={{
@@ -122,24 +130,28 @@ export default function AdBanner({ type = 'leaderboard', customStyle = {} }) {
         }}>
           Sponsored Editorial Directory
         </div>
-        <iframe
-          data-aa="2453243"
-          src="//acceptable.a-ads.com/2453243/?size=Adaptive&background_color=0d121f"
-          style={{
-            border: 0,
-            padding: 0,
-            width: '100%',
-            maxWidth: '728px',
-            height: '90px',
-            overflow: 'hidden',
-            margin: 'auto'
-          }}
-          title="A-ADS Native Placement"
-        />
+        <div id="frame" style={{ width: '100%', margin: 'auto', position: 'relative', zIndex: 99998 }}>
+          <iframe
+            data-aa="2453328"
+            src="//acceptable.a-ads.com/2453328/?size=Adaptive"
+            style={{
+              border: 0,
+              padding: 0,
+              width: '100%',
+              maxWidth: '728px',
+              height: '90px',
+              overflow: 'hidden',
+              display: 'block',
+              margin: 'auto'
+            }}
+            title="A-ADS Native 2453328"
+          />
+        </div>
       </div>
     );
   }
 
+  // 4. Sticky Bottom Footer Banner (2453325)
   if (type === 'bottom-anchor') {
     return (
       <div style={{
@@ -150,7 +162,7 @@ export default function AdBanner({ type = 'leaderboard', customStyle = {} }) {
         background: 'rgba(7, 10, 18, 0.97)',
         backdropFilter: 'blur(12px)',
         borderTop: '1.5px solid var(--primary-teal)',
-        padding: '8px 16px',
+        padding: '6px 16px',
         zIndex: 99999,
         boxShadow: '0 -8px 24px rgba(0, 0, 0, 0.7)',
         display: 'flex',
@@ -167,7 +179,7 @@ export default function AdBanner({ type = 'leaderboard', customStyle = {} }) {
             transform: 'translateY(-50%)',
             width: '26px',
             height: '26px',
-            background: 'rgba(255, 255, 255, 0.1)',
+            background: 'rgba(255, 255, 255, 0.15)',
             border: 'none',
             borderRadius: '50%',
             display: 'flex',
@@ -176,23 +188,24 @@ export default function AdBanner({ type = 'leaderboard', customStyle = {} }) {
             cursor: 'pointer',
             color: 'var(--text-white)'
           }}
-          aria-label="Dismiss banner"
+          aria-label="Close sponsor ad"
         >
           <X size={14} />
         </button>
-        <div style={{ width: '100%', maxWidth: '728px', margin: 'auto' }}>
+        <div id="frame" style={{ width: '100%', maxWidth: '728px', margin: 'auto', position: 'relative', zIndex: 99998 }}>
           <iframe
-            data-aa="2453243"
-            src="//acceptable.a-ads.com/2453243/?size=Adaptive&background_color=0b0f19"
+            data-aa="2453325"
+            src="//acceptable.a-ads.com/2453325/?size=Adaptive"
             style={{
               border: 0,
               padding: 0,
               width: '100%',
-              height: '60px',
+              height: '70px',
               overflow: 'hidden',
+              display: 'block',
               margin: 'auto'
             }}
-            title="A-ADS Sticky Bottom Anchor"
+            title="A-ADS Sticky Bottom 2453325"
           />
         </div>
       </div>
