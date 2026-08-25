@@ -23,10 +23,12 @@ export default function Home() {
           <article className="editorial-card">
             
             {/* Hero Image */}
-            <div style={{ position: 'relative', width: '100%', maxHeight: '420px', overflow: 'hidden', background: '#000' }}>
+            <div style={{ position: 'relative', width: '100%', maxHeight: '420px', overflow: 'hidden', background: '#000', borderRadius: '12px' }}>
               <img
                 src="vault_hero.jpg"
                 alt="Institutional Cryptocurrency Vault"
+                loading="eager"
+                decoding="async"
                 style={{ width: '100%', height: '100%', objectFit: 'cover' }}
               />
             </div>
@@ -41,15 +43,7 @@ export default function Home() {
                 </span>
               </div>
 
-              <h1 style={{
-                fontFamily: 'var(--font-heading)',
-                fontSize: 'clamp(1.75rem, 3.5vw, 2.3rem)',
-                fontWeight: 800,
-                color: 'var(--text-white)',
-                lineHeight: 1.25,
-                letterSpacing: '-0.5px',
-                marginBottom: '20px'
-              }}>
+              <h1 className="text-h1" style={{ marginBottom: '20px' }}>
                 Institutional Crypto Insurance: The Definitive 2026 Guide to Protecting Digital Assets &amp; Smart Contracts
               </h1>
 
@@ -66,6 +60,8 @@ export default function Home() {
                 <img
                   src="author_harrison.jpg"
                   alt="Dr. Harrison Vance, Ph.D."
+                  loading="lazy"
+                  decoding="async"
                   style={{
                     width: '48px',
                     height: '48px',
@@ -87,28 +83,24 @@ export default function Home() {
               </div>
 
               {/* Prose Content */}
-              <div style={{ color: '#d1d5db', fontSize: '1.02rem', lineHeight: 1.75 }}>
-                <p style={{ marginBottom: '20px' }}>
+              <div className="text-body">
+                <p>
                   As institutional capital allocations into decentralized finance (DeFi) and digital custody solutions surpass historic highs, the necessity for robust, actuarially verified <strong>Cryptocurrency Asset Insurance</strong> has transitioned from a theoretical hedge to an essential corporate fiduciary requirement.
                 </p>
-                <p style={{ marginBottom: '20px' }}>
+                <p>
                   In traditional finance, banking deposits are insured through federal entities such as the FDIC or SIPC. However, in the decentralized blockchain landscape, insurance coverage is underwritten via collateralized capital pools, risk-rated smart contracts, and decentralized autonomous syndicates that offer compensation against contract exploits, oracle manipulation, and custodial insolvency.
                 </p>
 
                 {/* Interactive Actuarial Calculator */}
                 <RiskCalculator />
 
-                <h2 style={{
-                  fontFamily: 'var(--font-heading)',
-                  fontSize: '1.5rem',
-                  fontWeight: 800,
-                  color: 'var(--text-white)',
+                <h2 className="text-h2" style={{
                   margin: '34px 0 16px 0',
                   display: 'flex',
                   alignItems: 'center',
                   gap: '10px'
                 }}>
-                  <Shield size={22} color="var(--primary-teal)" />
+                  <Shield size={22} color="var(--primary-teal)" style={{ flexShrink: 0 }} />
                   Key Pillars of Digital Asset Underwriting
                 </h2>
 
@@ -158,56 +150,44 @@ export default function Home() {
                 {/* In-Article Ad */}
                 <AdBanner type="in-article" />
 
-                <h2 style={{
-                  fontFamily: 'var(--font-heading)',
-                  fontSize: '1.5rem',
-                  fontWeight: 800,
-                  color: 'var(--text-white)',
+                <h2 className="text-h2" style={{
                   margin: '34px 0 16px 0',
                   display: 'flex',
                   alignItems: 'center',
                   gap: '10px'
                 }}>
-                  <Lock size={22} color="var(--primary-teal)" />
+                  <Lock size={22} color="var(--primary-teal)" style={{ flexShrink: 0 }} />
                   Bitcoin &amp; Multi-Chain Cryptocurrency Cold Vault Protection
                 </h2>
 
-                <p style={{ marginBottom: '20px' }}>
+                <p>
                   Institutional cryptocurrency storage mandates multi-layered defense frameworks. For <strong>Bitcoin (BTC)</strong> and multi-chain digital assets, underwriters require air-gapped cryptographic signing ceremonies, sharded private seed generation, and Multi-Party Computation (MPC) custody architectures to eliminate single points of compromise.
                 </p>
-                <p style={{ marginBottom: '20px' }}>
+                <p>
                   VaultShield benchmarks digital asset underwriting across major blockchain networks including <strong>Bitcoin (BTC)</strong>, <strong>Ethereum (ETH)</strong>, <strong>Solana (SOL)</strong>, <strong>Avalanche (AVAX)</strong>, and <strong>Binance Smart Chain (BNB)</strong>.
                 </p>
 
-                <h2 style={{
-                  fontFamily: 'var(--font-heading)',
-                  fontSize: '1.5rem',
-                  fontWeight: 800,
-                  color: 'var(--text-white)',
+                <h2 className="text-h2" style={{
                   margin: '34px 0 16px 0',
                   display: 'flex',
                   alignItems: 'center',
                   gap: '10px'
                 }}>
-                  <Zap size={22} color="var(--primary-teal)" />
+                  <Zap size={22} color="var(--primary-teal)" style={{ flexShrink: 0 }} />
                   Ethereum &amp; DeFi Smart Contract Exploit Coverage
                 </h2>
 
-                <p style={{ marginBottom: '20px' }}>
+                <p>
                   Decentralized finance (DeFi) protocols and decentralized applications (dApps) execute billions in automated liquidity swaps. Smart contract insurance indemnifies liquidity providers and Web3 protocols against zero-day code vulnerabilities, re-entrancy bugs, oracle price manipulation, and flash-loan exploits.
                 </p>
 
-                <h2 style={{
-                  fontFamily: 'var(--font-heading)',
-                  fontSize: '1.5rem',
-                  fontWeight: 800,
-                  color: 'var(--text-white)',
+                <h2 className="text-h2" style={{
                   margin: '34px 0 16px 0',
                   display: 'flex',
                   alignItems: 'center',
                   gap: '10px'
                 }}>
-                  <CheckCircle2 size={22} color="var(--primary-teal)" />
+                  <CheckCircle2 size={22} color="var(--primary-teal)" style={{ flexShrink: 0 }} />
                   How Cryptocurrency Insurance Claims Are Verified On-Chain
                 </h2>
 

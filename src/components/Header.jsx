@@ -96,7 +96,7 @@ export default function Header() {
             <span>Tier-1 Underwriting</span>
           </div>
           
-          <Link to="/calculator" className="btn-primary" style={{ padding: '8px 18px', fontSize: '0.84rem' }}>
+          <Link to="/calculator" className="btn-primary hide-on-mobile" style={{ padding: '8px 18px', fontSize: '0.84rem' }}>
             <span>Get Coverage</span>
             <ArrowRight size={14} />
           </Link>
