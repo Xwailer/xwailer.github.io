@@ -960,10 +960,11 @@
   <div class='vs-ad-leaderboard-wrap'>
     <div class='vs-ad-box'>
       <div class='vs-ad-label'>Advertisement / Sponsored Directory</div>
-      <div class='vs-ad-inner-frame' id='vsTopLeaderboardSlot'>
-        <!-- WORKING AD UNIT 2453243 / PROGRAMMATIC AD CONTAINER -->
-        <iframe data-aa='2453243' src='//acceptable.a-ads.com/2453243/?size=Adaptive&amp;background_color=0d121f' style='border:0; padding:0; width:100%; max-width:728px; height:90px; overflow:hidden; margin:auto;'/>
+      <!-- BEGIN AADS AD UNIT 2453326 -->
+      <div id='frame' style='width: 100%;margin: auto;position: relative; z-index: 99998;'>
+        <iframe data-aa='2453326' src='//acceptable.a-ads.com/2453326/?size=Adaptive' style='border:0; padding:0; width:70%; height:auto; overflow:hidden;display: block;margin: auto'/>
       </div>
+      <!-- END AADS AD UNIT 2453326 -->
     </div>
   </div>
 
@@ -1127,7 +1128,11 @@
                     <!-- IN-ARTICLE SPONSOR AD -->
                     <div class='vs-in-article-ad'>
                       <div class='vs-ad-label'>Sponsored Editorial Directory</div>
-                      <iframe data-aa='2453243' src='//acceptable.a-ads.com/2453243/?size=Adaptive&amp;background_color=0d121f' style='border:0; padding:0; width:100%; max-width:728px; height:90px; overflow:hidden; margin:auto;'/>
+                      <!-- BEGIN AADS AD UNIT 2453325 -->
+                      <div id='frame' style='width: 100%;margin: auto;position: relative; z-index: 99998;'>
+                        <iframe data-aa='2453325' src='//acceptable.a-ads.com/2453325/?size=Adaptive' style='border:0; padding:0; width:70%; height:auto; overflow:hidden;display: block;margin: auto'/>
+                      </div>
+                      <!-- END AADS AD UNIT 2453325 -->
                     </div>
 
                     <h2>Bitcoin &amp; Multi-Chain Cryptocurrency Cold Vault Protection</h2>
@@ -1240,9 +1245,13 @@
       
       <!-- STICKY 300x600 SIDEBAR AD -->
       <div class='vs-sticky-sidebar-ad'>
-        <div class='vs-ad-label'>Sponsored High-Impact (300x600)</div>
+        <div class='vs-ad-label'>Sponsored High-Impact Placement</div>
         <div class='vs-halfpage-ad-slot' id='vsSidebarStickyAd'>
-          <iframe data-aa='2453243' src='//acceptable.a-ads.com/2453243/?size=300x250&amp;background_color=0b0f19' style='border:0; padding:0; width:300px; height:250px; overflow:hidden; margin:auto;'/>
+          <!-- BEGIN AADS AD UNIT 2453325 -->
+          <div id='frame' style='width: 100%;margin: auto;position: relative; z-index: 99998;'>
+            <iframe data-aa='2453325' src='//acceptable.a-ads.com/2453325/?size=Adaptive' style='border:0; padding:0; width:100%; max-width:300px; height:250px; overflow:hidden; margin:auto; display:block;'/>
+          </div>
+          <!-- END AADS AD UNIT 2453325 -->
         </div>
       </div>
 
@@ -1379,12 +1388,26 @@
   </footer>
 
   <!-- 6. STICKY BOTTOM AD FRAME -->
-  <div class='vs-sticky-anchor' id='vsStickyAnchor'>
-    <div class='vs-anchor-close' onclick="document.getElementById('vsStickyAnchor').style.display='none'">&#215;</div>
-    <div style='width: 100%; max-width: 728px; margin: auto;'>
-      <iframe data-aa='2453243' src='//acceptable.a-ads.com/2453243/?size=Adaptive&amp;background_color=0b0f19' style='border:0; padding:0; width:100%; height:60px; overflow:hidden; margin:auto;'/>
+  <!-- BEGIN AADS AD UNIT 2453328 -->
+  <div style='position: relative; z-index: 99999;'>
+    <input autocomplete='off' hidden='hidden' id='aadsstickymt8vcu41' type='checkbox'/>
+    <div style='padding-top: 0; padding-bottom: auto;'>
+      <div style='width:100%;height:auto;position:fixed;text-align:center;font-size:0;bottom:0;left:0;right:0;margin:auto;z-index:99999;background:rgba(7,10,18,0.95);backdrop-filter:blur(10px);border-top:1.5px solid #10b981;padding:4px 0;'>
+        <label for='aadsstickymt8vcu41' style='top: 50%;transform: translateY(-50%);right:24px; position: absolute;border-radius: 4px; background: rgba(248, 248, 249, 0.70); padding: 4px;z-index: 99999;cursor:pointer;'>
+          <svg fill='#000000' height='16px' viewBox='0 0 490 490' width='16px' xmlns='http://www.w3.org/2000/svg'>
+            <polygon points='456.851,0 245,212.564 33.149,0 0.708,32.337 212.669,245.004 0.708,457.678 33.149,490 245,277.443 456.851,490 489.292,457.678 277.331,245.004 489.292,32.337 '/>
+          </svg>
+        </label>
+        <div id='frame' style='width: 100%;margin: auto;position: relative; z-index: 99998;'><iframe data-aa='2453328' src='//acceptable.a-ads.com/2453328/?size=Adaptive' style='border:0; padding:0; width:70%; height:auto; overflow:hidden; margin: auto; display: block;'/></div>
+      </div>
+      <style>
+        #aadsstickymt8vcu41:checked + div {
+          display: none;
+        }
+      </style>
     </div>
   </div>
+  <!-- END AADS AD UNIT 2453328 -->
 
   <!-- JAVASCRIPT: CALCULATOR & REAL PAGES ROUTER -->
   <script type='text/javascript'>
