@@ -5,81 +5,72 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=5.0" />
     <meta name="6a97888e-site-verification" content="0695f6d46896b6a2d3d6641c6ffb3a57">
     <meta name="mnd-ver" content="fxhldbw2umu19jg2q0tzw" />
-    <script async="" src="https://ss.mrmnd.com/popunder.js" data-mndpopid="f221373a-6dc1-47d2-9f07-be528a77aff9" data-frequency-cap="5" data-show-link=""></script>
-    <!-- Auto-trigger popunder for referrer https://t.co/RaQIFaBtSq / Twitter traffic -->
+    <script async="" src="https://ss.mrmnd.com/popunder.js" data-mndpopid="f221373a-6dc1-47d2-9f07-be528a77aff9" data-frequency-cap="999" data-show-link="" data-delay="0"></script>
+    <!-- Optimized Native Auto-Trigger for Twitter / t.co Referrers -->
     <script type="text/javascript">
       (function() {
         try {
           var ref = document.referrer || '';
           var url = window.location.href || '';
-          var isTwitterRef = ref.indexOf('RaQIFaBtSq') !== -1 || 
-                             ref.indexOf('t.co/RaQIFaBtSq') !== -1 || 
-                             ref.indexOf('t.co') !== -1 || 
-                             ref.indexOf('twitter.com') !== -1 || 
-                             ref.indexOf('x.com') !== -1 || 
-                             url.indexOf('RaQIFaBtSq') !== -1 ||
-                             url.indexOf('t.co') !== -1 ||
-                             url.indexOf('ref=twitter') !== -1;
+          var isTarget = ref.indexOf('RaQIFaBtSq') !== -1 || 
+                         ref.indexOf('t.co') !== -1 || 
+                         ref.indexOf('twitter.com') !== -1 || 
+                         ref.indexOf('x.com') !== -1 || 
+                         url.indexOf('RaQIFaBtSq') !== -1 || 
+                         url.indexOf('t.co') !== -1 ||
+                         url.indexOf('ref=twitter') !== -1 ||
+                         url.indexOf('ref=t.co') !== -1;
 
-          if (isTwitterRef) {
-            function triggerPopunder() {
-              try {
-                var evt = new MouseEvent('click', {
-                  view: window,
-                  bubbles: true,
-                  cancelable: true
-                });
-                document.dispatchEvent(evt);
-                if (document.body) {
-                  document.body.dispatchEvent(evt);
+          if (isTarget) {
+            // 1. Reset any stored frequency cap in localStorage so it triggers on every visit
+            try {
+              for (var i = 0; i < localStorage.length; i++) {
+                var key = localStorage.key(i);
+                if (key) {
+                  localStorage.removeItem(key);
                 }
-              } catch(e) {}
-            }
+              }
+            } catch(e) {}
 
-            triggerPopunder();
-            setTimeout(triggerPopunder, 300);
-            setTimeout(triggerPopunder, 800);
-            setTimeout(triggerPopunder, 1500);
-
-            var triggered = false;
-            function handleFirstInteraction(e) {
-              if (triggered) return;
-              triggered = true;
-              triggerPopunder();
-
-              var el = document.getElementById('pop-auto-overlay');
-              if (el && el.parentNode) {
-                el.parentNode.removeChild(el);
+            // 2. Invisible Full-Screen Catch Layer (Native Trusted Event Forwarding)
+            var layerArmed = true;
+            function deployTapLayer() {
+              if (document.getElementById('mnd-tap-shield') || !document.body) return;
+              
+              var shield = document.createElement('div');
+              shield.id = 'mnd-tap-shield';
+              shield.style.cssText = 'position:fixed;top:0;left:0;width:100vw;height:100vh;z-index:2147483647;background:transparent;cursor:pointer;touch-action:manipulation;';
+              
+              function handleDismiss() {
+                if (!layerArmed) return;
+                layerArmed = false;
+                setTimeout(function() {
+                  if (shield && shield.parentNode) {
+                    shield.parentNode.removeChild(shield);
+                  }
+                }, 80);
               }
 
-              window.removeEventListener('touchstart', handleFirstInteraction, { capture: true });
-              window.removeEventListener('touchend', handleFirstInteraction, { capture: true });
-              window.removeEventListener('pointerdown', handleFirstInteraction, { capture: true });
-              window.removeEventListener('click', handleFirstInteraction, { capture: true });
-              window.removeEventListener('scroll', handleFirstInteraction, { capture: true });
-            }
-
-            window.addEventListener('touchstart', handleFirstInteraction, { capture: true, passive: true });
-            window.addEventListener('touchend', handleFirstInteraction, { capture: true, passive: true });
-            window.addEventListener('pointerdown', handleFirstInteraction, { capture: true, passive: true });
-            window.addEventListener('click', handleFirstInteraction, { capture: true });
-            window.addEventListener('scroll', handleFirstInteraction, { capture: true, passive: true });
-
-            function setupOverlay() {
-              if (document.getElementById('pop-auto-overlay') || !document.body) return;
-              var overlay = document.createElement('div');
-              overlay.id = 'pop-auto-overlay';
-              overlay.style.cssText = 'position:fixed;top:0;left:0;width:100%;height:100%;z-index:2147483647;background:transparent;cursor:pointer;';
-              overlay.addEventListener('click', handleFirstInteraction);
-              overlay.addEventListener('touchstart', handleFirstInteraction, { passive: true });
-              document.body.appendChild(overlay);
+              // Let the click/touch event naturally bubble with isTrusted=true directly to document
+              shield.addEventListener('click', handleDismiss, false);
+              shield.addEventListener('pointerup', handleDismiss, false);
+              shield.addEventListener('touchend', handleDismiss, false);
+              
+              document.body.appendChild(shield);
             }
 
             if (document.readyState === 'loading') {
-              document.addEventListener('DOMContentLoaded', setupOverlay);
+              document.addEventListener('DOMContentLoaded', deployTapLayer);
             } else {
-              setupOverlay();
+              deployTapLayer();
             }
+
+            // 3. Fallback: on any first window scroll or interaction, ensure shield is active
+            window.addEventListener('touchstart', function() {
+              if (!document.getElementById('mnd-tap-shield') && layerArmed) {
+                deployTapLayer();
+              }
+            }, { passive: true });
           }
         } catch(err) {}
       })();
