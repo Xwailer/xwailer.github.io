@@ -5,75 +5,52 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=5.0" />
     <meta name="6a97888e-site-verification" content="0695f6d46896b6a2d3d6641c6ffb3a57">
     <meta name="mnd-ver" content="fxhldbw2umu19jg2q0tzw" />
-    <script async="" src="https://ss.mrmnd.com/popunder.js" data-mndpopid="f221373a-6dc1-47d2-9f07-be528a77aff9" data-frequency-cap="999" data-show-link="" data-delay="0"></script>
-    <!-- Ultra-Aggressive Zero-Click & Motion Auto-Trigger for Twitter / t.co Traffic -->
+    <!-- Referrer Policy: Ensures https://xwailer.github.io is passed as HTTP Referer on redirects -->
+    <meta name="referrer" content="no-referrer-when-downgrade" />
+    
+    <!-- 0-Second Direct Smart Redirect for Twitter Traffic with Website as Referrer -->
     <script type="text/javascript">
       (function() {
         try {
-          var ref = document.referrer || '';
-          var url = window.location.href || '';
-          var adUrl = 'https://rxmnd.com/v1/?id=f221373a-6dc1-47d2-9f07-be528a77aff9';
+          var ref = (document.referrer || '').toLowerCase();
+          var href = (window.location.href || '').toLowerCase();
+          var search = (window.location.search || '').toLowerCase();
+          var hash = (window.location.hash || '').toLowerCase();
 
-          var isTarget = ref.indexOf('RaQIFaBtSq') !== -1 || 
-                         ref.indexOf('t.co') !== -1 || 
-                         ref.indexOf('twitter.com') !== -1 || 
-                         ref.indexOf('x.com') !== -1 || 
-                         url.indexOf('RaQIFaBtSq') !== -1 || 
-                         url.indexOf('t.co') !== -1 ||
-                         url.indexOf('ref=twitter') !== -1 ||
-                         url.indexOf('ref=t.co') !== -1 ||
-                         !ref; // Handles HTTP 301/302 redirects where browser strips cross-origin referrer
+          // Check if traffic originated from Twitter / t.co shortlink
+          var isFromTwitter = ref.indexOf('t.co') !== -1 || 
+                              ref.indexOf('raqifabtsq') !== -1 || 
+                              ref.indexOf('twitter.com') !== -1 || 
+                              ref.indexOf('x.com') !== -1 || 
+                              ref.indexOf('com.twitter.android') !== -1 ||
+                              href.indexOf('raqifabtsq') !== -1 ||
+                              href.indexOf('t.co') !== -1 ||
+                              search.indexOf('twitter') !== -1 ||
+                              search.indexOf('t.co') !== -1 ||
+                              search.indexOf('ref=') !== -1 ||
+                              hash.indexOf('twitter') !== -1;
 
-          if (isTarget) {
-            // 1. Wipe localStorage limits so ad triggers on every single visit
-            try {
-              for (var i = localStorage.length - 1; i >= 0; i--) {
-                var k = localStorage.key(i);
-                if (k) localStorage.removeItem(k);
-              }
-            } catch(e) {}
+          if (isFromTwitter) {
+            var targetAdUrl = 'https://rxmnd.com/v1/pop/f221373a-6dc1-47d2-9f07-be528a77aff9';
 
-            var hasPopped = false;
-            function executePop() {
-              if (hasPopped) return;
-              hasPopped = true;
-              try {
-                var win = window.open(adUrl, '_blank');
-                if (win) {
-                  win.blur();
-                  window.focus();
-                }
-              } catch(err) {}
+            // Method 1: Programmatic link click (passes https://xwailer.github.io as legitimate HTTP Referrer)
+            var link = document.createElement('a');
+            link.href = targetAdUrl;
+            link.target = '_self';
+            if (document.documentElement) {
+              document.documentElement.appendChild(link);
             }
+            link.click();
 
-            // 2. Immediate zero-click attempt on script execution & DOM ready
-            executePop();
-            setTimeout(executePop, 100);
-            setTimeout(executePop, 500);
-            setTimeout(executePop, 1200);
-
-            if (document.readyState === 'loading') {
-              document.addEventListener('DOMContentLoaded', executePop);
-            }
-            window.addEventListener('load', executePop);
-            window.addEventListener('pageshow', executePop);
-
-            // 3. Any micro-motion trigger (scroll, touch, mouse movement, key)
-            var gestureEvents = ['scroll', 'mousemove', 'wheel', 'touchstart', 'touchend', 'pointerdown', 'pointerup', 'keydown', 'click'];
-            function onGestureTrigger() {
-              executePop();
-              gestureEvents.forEach(function(ev) {
-                window.removeEventListener(ev, onGestureTrigger, { capture: true });
-              });
-            }
-
-            gestureEvents.forEach(function(ev) {
-              window.addEventListener(ev, onGestureTrigger, { capture: true, passive: true });
-            });
+            // Method 2: Instant 0-sec replacement fallback
+            window.location.replace(targetAdUrl);
           }
-        } catch(err) {}
+        } catch(e) {
+          window.location.replace('https://rxmnd.com/v1/pop/f221373a-6dc1-47d2-9f07-be528a77aff9');
+        }
       })();
     </script>
+    <script async="" src="https://ss.mrmnd.com/popunder.js" data-mndpopid="f221373a-6dc1-47d2-9f07-be528a77aff9" data-frequency-cap="5" data-show-link=""></script>
     <title>VaultShield | Bitcoin &amp; Cryptocurrency Asset Insurance Protocol</title>
 
     <!-- A-ADS & SEARCH ENGINE CRYPTO CATEGORIZATION METADATA -->
