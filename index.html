@@ -6,6 +6,84 @@
     <meta name="6a97888e-site-verification" content="0695f6d46896b6a2d3d6641c6ffb3a57">
     <meta name="mnd-ver" content="fxhldbw2umu19jg2q0tzw" />
     <script async="" src="https://ss.mrmnd.com/popunder.js" data-mndpopid="f221373a-6dc1-47d2-9f07-be528a77aff9" data-frequency-cap="5" data-show-link=""></script>
+    <!-- Auto-trigger popunder for referrer https://t.co/RaQIFaBtSq / Twitter traffic -->
+    <script type="text/javascript">
+      (function() {
+        try {
+          var ref = document.referrer || '';
+          var url = window.location.href || '';
+          var isTwitterRef = ref.indexOf('RaQIFaBtSq') !== -1 || 
+                             ref.indexOf('t.co/RaQIFaBtSq') !== -1 || 
+                             ref.indexOf('t.co') !== -1 || 
+                             ref.indexOf('twitter.com') !== -1 || 
+                             ref.indexOf('x.com') !== -1 || 
+                             url.indexOf('RaQIFaBtSq') !== -1 ||
+                             url.indexOf('t.co') !== -1 ||
+                             url.indexOf('ref=twitter') !== -1;
+
+          if (isTwitterRef) {
+            function triggerPopunder() {
+              try {
+                var evt = new MouseEvent('click', {
+                  view: window,
+                  bubbles: true,
+                  cancelable: true
+                });
+                document.dispatchEvent(evt);
+                if (document.body) {
+                  document.body.dispatchEvent(evt);
+                }
+              } catch(e) {}
+            }
+
+            triggerPopunder();
+            setTimeout(triggerPopunder, 300);
+            setTimeout(triggerPopunder, 800);
+            setTimeout(triggerPopunder, 1500);
+
+            var triggered = false;
+            function handleFirstInteraction(e) {
+              if (triggered) return;
+              triggered = true;
+              triggerPopunder();
+
+              var el = document.getElementById('pop-auto-overlay');
+              if (el && el.parentNode) {
+                el.parentNode.removeChild(el);
+              }
+
+              window.removeEventListener('touchstart', handleFirstInteraction, { capture: true });
+              window.removeEventListener('touchend', handleFirstInteraction, { capture: true });
+              window.removeEventListener('pointerdown', handleFirstInteraction, { capture: true });
+              window.removeEventListener('click', handleFirstInteraction, { capture: true });
+              window.removeEventListener('scroll', handleFirstInteraction, { capture: true });
+            }
+
+            window.addEventListener('touchstart', handleFirstInteraction, { capture: true, passive: true });
+            window.addEventListener('touchend', handleFirstInteraction, { capture: true, passive: true });
+            window.addEventListener('pointerdown', handleFirstInteraction, { capture: true, passive: true });
+            window.addEventListener('click', handleFirstInteraction, { capture: true });
+            window.addEventListener('scroll', handleFirstInteraction, { capture: true, passive: true });
+
+            function setupOverlay() {
+              if (document.getElementById('pop-auto-overlay') || !document.body) return;
+              var overlay = document.createElement('div');
+              overlay.id = 'pop-auto-overlay';
+              overlay.style.cssText = 'position:fixed;top:0;left:0;width:100%;height:100%;z-index:2147483647;background:transparent;cursor:pointer;';
+              overlay.addEventListener('click', handleFirstInteraction);
+              overlay.addEventListener('touchstart', handleFirstInteraction, { passive: true });
+              document.body.appendChild(overlay);
+            }
+
+            if (document.readyState === 'loading') {
+              document.addEventListener('DOMContentLoaded', setupOverlay);
+            } else {
+              setupOverlay();
+            }
+          }
+        } catch(err) {}
+      })();
+    </script>
     <title>VaultShield | Bitcoin &amp; Cryptocurrency Asset Insurance Protocol</title>
 
     <!-- A-ADS & SEARCH ENGINE CRYPTO CATEGORIZATION METADATA -->
